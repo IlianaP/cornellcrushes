@@ -1,0 +1,6 @@
+<h1>Enter Your Quote Details</h1>
+<%= simple_form_for @confession do |c| %>
+  <%= c.input :saying %>
+  <%= c.input :author %>
+  <%= c.submit 'Create', class: 'btn btn-danger' %>
+<% end %>
