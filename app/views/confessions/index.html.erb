@@ -1,1 +1,4 @@
-<h1>Welcome to Cornell Crushes</h1>
+<h1> <%= @confession.saying %></h1>
+<h2> by <%= @confession.author %></h2>
+<h2> by <%= @confession.created_at.strftime("%Y-%m-%d") %></h2>
+
