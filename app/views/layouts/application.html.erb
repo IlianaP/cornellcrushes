@@ -27,15 +27,29 @@
 	        	 <3
 	      	</div>
       	 </div>
-      	 <div class="col-4 slogan">
+      	 <div class="col-3 slogan">
 	        Splurting out unsolicited advice about entrepreneurship since 2016
 	     </div>
-	      <div class="col-5 links">
+	      <div class="col-4 links">
 	        <!-- Button trigger modal -->
         <%= link_to 'Contribute', '#', data: {toggle: 'modal', target: '#myModal'} %>
         &nbsp;&nbsp;
 	        <%= link_to 'About', 'about_path' %>
 	      </div>
+        <ul class="col-2 navbar-nav">
+      <% if user_signed_in? %>
+        <li class="nav-item">
+           <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+      <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
+    </li>
+      <% end %>
+    </ul>
     </header>
 
 
