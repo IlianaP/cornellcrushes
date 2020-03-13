@@ -3,10 +3,6 @@ class ConfessionsController < ApplicationController
 		@confession = Confession.all.reverse
 	end
 
-	def new
-		@confession = Confession.new
-  	end 
-
   	def create
   		@confession = Confession.create(confession_params) 
   		if @confession.invalid?
