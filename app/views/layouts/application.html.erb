@@ -33,6 +33,7 @@
 	      <div class="col-5 links">
 	        <!-- Button trigger modal -->
         <%= link_to 'Contribute', '#', data: {toggle: 'modal', target: '#myModal'} %>
+        &nbsp;&nbsp;
 	        <%= link_to 'About', 'about_path' %>
 	      </div>
     </header>
@@ -51,14 +52,13 @@
           <%= simple_form_for Confession.new do |c| %>
           <div class="modal-body">
             <h1>Dare to confess?</h1>
-              <%= c.input :saying, placeholder: "I confess..." %>
-              <%= c.input :author, placeholder: "Anonymous" %>
-              <%= c.submit 'Create', class: 'btn btn-danger' %>
-            <% end %>
+              <%= c.input :saying, label: "I confess...", placeholder: "Jane Doe, you have the cutest smile I have ever seen." %>
+              <%= c.input :author, label: "By...", placeholder: "Jake" %>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <%= c.submit 'Create', class: 'btn btn-danger' %>
+            <% end %>
           </div>
         </div>
       </div>

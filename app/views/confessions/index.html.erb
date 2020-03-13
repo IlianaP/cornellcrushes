@@ -2,7 +2,8 @@
 
 <% @confession.each do |confession| %>
   <tr>
-  	<p> <%= confession.created_at.strftime("%Y-%m-%d")%> </p>
+  	<h2>
+  <span>No. <%= confession.id %> on <%= confession.created_at.strftime("%Y-%m-%d")%> </span>
   	<h1><%= confession.saying %></h1>
     <h2><%= confession.author %></h2>
 
