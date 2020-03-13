@@ -6,6 +6,8 @@
   <span>No. <%= confession.id %> on <%= confession.created_at.strftime("%Y-%m-%d")%> </span>
   	<h1><%= confession.saying %></h1>
     <h2><%= confession.author %></h2>
+    <%= link_to 'Edit', edit_confession_path(@confession), class: 'btn btn-primary' %> 
+	</br>
 
   </tr>
   <br>

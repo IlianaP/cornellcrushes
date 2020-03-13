@@ -1,0 +1,7 @@
+<div class="booyah-box col-10 offset-1">
+<%= simple_form_for @confession do |c| %>
+     <%= c.input :saying %>
+     <%= c.input :author %>
+    <%= c.submit 'Update', class: 'btn btn-danger' %>
+<% end %>
+</div>

@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root 'confessions#index'
   resources :confessions
   get 'about', to: 'confessions#about'
+  get 'review', to: 'confessions#review'
 end

@@ -1,4 +1,5 @@
 class ConfessionsController < ApplicationController
+	before_action :authenticate_user!, only: [:update]
 	def index 
 		@confession = Confession.all.reverse
 	end
@@ -15,6 +16,16 @@ class ConfessionsController < ApplicationController
   	end
 
   	def about 
+  	end
+
+  	def edit
+  		@confession = Confession.find(params[:id])
+  	end
+
+  	def update
+  		@confession = Confession.find(params[:id])
+  		@confession.update_attributes(confession_params)
+  		redirect_to root_path
   	end
 
   	private 
