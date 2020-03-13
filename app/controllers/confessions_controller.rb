@@ -18,6 +18,9 @@ class ConfessionsController < ApplicationController
   		end
   	end
 
+  	def about 
+  	end
+
   	private 
   	def confession_params
   		params.require(:confession).permit(:saying, :author)
