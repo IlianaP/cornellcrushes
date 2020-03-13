@@ -1,6 +1,6 @@
-<h1>Enter Your Quote Details</h1>
+<h1>Dare to confess?</h1>
 <%= simple_form_for @confession do |c| %>
-  <%= c.input :saying %>
-  <%= c.input :author %>
+  <%= c.input :saying, placeholder: "I confess..." %>
+  <%= c.input :author, placeholder: "Anonymous" %>
   <%= c.submit 'Create', class: 'btn btn-danger' %>
 <% end %>
