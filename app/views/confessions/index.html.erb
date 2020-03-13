@@ -1,17 +1,38 @@
-
+<% if user_signed_in? %> 
 
 <% @confession.each do |confession| %>
   <tr>
-  	<h2>
   <span>No. <%= confession.id %> on <%= confession.created_at.strftime("%Y-%m-%d")%> </span>
-  	<h1><%= confession.saying %></h1>
-    <h2><%= confession.author %></h2>
-    <% if user_signed_in? %> 
-    <%= link_to 'Edit', edit_confession_path(@confession), class: 'btn btn-primary' %> 
-    <%= link_to 'Destroy', confession_path(@confession), method: :delete, data: {confirm: 'Are you sure you want to delete this confession?'},class: 'btn btn-danger' %>
-    <% end %> 
-	</br>
-
-  </tr>
+    <div class = row> 
+      <div class = col-1>
+      </div>
+      <div class = col-5>
+        	<h3><%= confession.saying %></h3>
+      </div>
+      <div class = col-2>
+          <%= confession.author %>
+      </div>
+      <div class = col-4>
+          <%= link_to 'Edit', edit_confession_path(confession.id), class: 'btn btn-primary' %> 
+          <%= link_to 'Delete', confession_path(confession.id), method: :delete, data: {confirm: 'Are you sure you want to delete this confession?'},class: 'btn btn-danger' %>
+      </div>
+    </div>
+    <% end %>
+       
+      	</br>
+        </tr>
+    </div>
   <br>
+
+<% else %> 
+<% @confession.each do |confession| %>
+  <tr>
+    <h2>
+  <span>No. <%= confession.id %> on <%= confession.created_at.strftime("%Y-%m-%d")%> </span>
+    <h1><%= confession.saying %></h1>
+    <h2><%= confession.author %></h2>
+ 
+  </br>
+  </tr>
+  <% end %>
 <% end %>
