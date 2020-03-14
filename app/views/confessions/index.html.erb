@@ -32,15 +32,18 @@
 
 <% else %> 
 <% @confession.each do |confession| %>
-  <tr>
-  <blockquote class="blockquote"> 
-  <span class="text-muted">No. <%= confession.id %> on <%= confession.created_at.strftime("%Y-%m-%d")%> </span>
+    <div class = "row"> 
+      <div class="text-muted">No. <%= confession.id %> on <%= confession.created_at.strftime("%Y-%m-%d")%> &nbsp; &nbsp; </div>
+      <div>
+        <%= social_share_button_tag(confession.saying + ' — ' + confession.author, :url => confession_path(confession), desc: confession.saying) %> </div>
+      </div>
+      <blockquote class="blockquote">
     <h1><%= confession.saying %></h1>
-  </blockquote>
   <footer class="blockquote-footer">
     <%= confession.author %>
   </footer>
+    </blockquote>
   </br>
-  </tr>
+  
   <% end %>
 <% end %>
