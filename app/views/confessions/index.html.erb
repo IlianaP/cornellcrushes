@@ -6,18 +6,18 @@
     <div class = row> 
       <div class = col-1>
           <% if confession.reviewed==true %>
-            Approved
+            <p class = approved> Approved </p>
           <% else %>
-            Not Approved
+            <p class = notapproved> Not Approved </p>
           <% end %> 
       </div>
-      <div class = col-5>
+      <div class = col-7>
         	<h3><%= confession.saying %></h3>
       </div>
-      <div class = col-2>
+      <div class = col-1>
           <%= confession.author %>
       </div>
-      <div class = col-4>
+      <div class = col-3>
           <%= link_to 'Edit', edit_confession_path(confession.id), class: 'btn btn-primary' %> 
           <%= link_to 'Delete', confession_path(confession.id), method: :delete, data: {confirm: 'Are you sure you want to delete this confession?'},class: 'btn btn-danger' %>
 
@@ -31,7 +31,7 @@
   <br>
 
 <% else %> 
-<% @confession.each do |confession| %>
+<% @confessionreviewed.each do |confession| %>
     <div class = "row"> 
       <div class="text-muted">No. <%= confession.id %> on <%= confession.created_at.strftime("%Y-%m-%d")%> &nbsp; &nbsp; </div>
       <div>

@@ -1,5 +1,10 @@
 @import "bootstrap";
 
+.approved {
+  color: green;
+  font-weight: bold;
+}
+
 .clear {
   clear: both;
 } 
@@ -58,6 +63,11 @@ hr {
   color: black; 
   font-size: 25px;
   border-bottom: 1px solid #dfdfdf;
+}
+
+.notapproved {
+  color: #f84342;
+  font-weight: bold;
 }
 
 ::selection {

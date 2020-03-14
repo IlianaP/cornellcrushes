@@ -1,7 +1,7 @@
 class ConfessionsController < ApplicationController
 	before_action :authenticate_user!, only: [:update]
 	def index 
-		
+		@confessionreviewed = Confession.where(reviewed:true).all.reverse
     @confession = Confession.all.reverse
 	end
 
