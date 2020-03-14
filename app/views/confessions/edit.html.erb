@@ -2,8 +2,7 @@
 <%= simple_form_for @confession do |c| %>
      <%= c.input :saying %>
      <%= c.input :author %>
-     <%= c.input :reviewed %> 
+     <%= c.input :reviewed, as: :boolean %> 
     <%= c.submit 'Update', class: 'btn btn-danger' %>
-    
 <% end %>
 </div>

@@ -1,7 +1,8 @@
 class ConfessionsController < ApplicationController
 	before_action :authenticate_user!, only: [:update]
 	def index 
-		@confession = Confession.all.reverse
+		
+    @confession = Confession.all.reverse
 	end
 
   	def create
@@ -36,6 +37,6 @@ class ConfessionsController < ApplicationController
 
   	private 
   	def confession_params
-  		params.require(:confession).permit(:saying, :author)
+  		params.require(:confession).permit(:saying, :author, :reviewed)
   	end
 end
